@@ -1,0 +1,522 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- ======= Hero Section ======= -->
+
+    <section id="cnc-hero" class="d-flex align-items-center justify-content-center">
+
+      <div class="container" data-aos="fade-up">
+
+        <div
+
+          class="row justify-content-center"
+
+          data-aos="fade-up"
+
+          data-aos-delay="150"
+
+        >
+
+          <div class="col-xl-6 col-lg-8">
+
+            <h1>SUPREME CNC<span>.</span></h1>
+
+            <h2>The heart of machining of our company</h2>
+
+          </div>
+
+        </div>
+
+
+
+        <div
+
+          class="row gy-4 mt-5 justify-content-center"
+
+          data-aos="zoom-in"
+
+          data-aos-delay="250"
+
+        >
+
+          <div class="col-xl-2 col-md-4">
+
+            <div class="icon-box">
+
+              
+
+              <h3><a href="#aboutcnc">About Supreme CNC</a></h3>
+
+            </div>
+
+          </div>
+
+          
+
+          <div class="col-xl-2 col-md-4">
+
+            <div class="icon-box">
+
+              
+
+              <h3><a href="#portfolio">Gallery</a></h3>
+
+            </div>
+
+          </div>
+
+          <div class="col-xl-2 col-md-4">
+
+            <div class="icon-box">
+
+              
+
+              <h3><a href="#capacity">Capacity</a></h3>
+
+            </div>
+
+          </div>
+          <div class="col-xl-2 col-md-4">
+
+            <div class="icon-box">
+
+              
+
+              <h3><a href="{% url 'cnc-products' %}">CNC Products</a></h3>
+
+            </div>
+
+          </div>
+
+          <!-- <div class="col-xl-2 col-md-4">
+
+            <div class="icon-box">
+
+              
+
+              <h3><a href="#capacity">Products</a></h3>
+
+            </div>
+
+          </div> -->
+
+         
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- End Hero -->
+
+
+
+    <main id="main">
+
+      <!-- ======= About Section ======= -->
+
+
+
+      <section id="aboutcnc" class="about">
+
+        <div class="container" data-aos="fade-up">
+
+          <div class="row">
+
+            <div
+
+              class="col-lg-6 order-1 order-lg-2"
+
+              data-aos="fade-left"
+
+              data-aos-delay="100"
+
+            >
+
+              <img src='{% static "assets/img/showcase-1.jpg" %}' class="img-fluid" alt="" />
+
+            </div>
+
+            <div
+
+              class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content"
+
+              data-aos="fade-right"
+
+              data-aos-delay="100"
+
+            >
+
+              <h3>
+
+                Welcome to Supreme CNC
+
+              </h3>
+
+              <p class="fst-italic">
+
+                Already an active competitor in the sub-contract machining sector for the past few years and after recently increasing the CNC machining capacity.
+
+              </p>
+
+              <ul>
+
+                <li>
+
+                  <i class="ri-check-double-line"></i> Supreme CNC is currently supplying some large locally, nationally and internationally based companies with precision machined components.
+
+                </li>
+
+                <li>
+
+                  <i class="ri-check-double-line"></i>  Servicing a variety of industries and using a wide range of exotic and non exotic materials, working closely with customer procurement and quality departments to develop prototypes and establish manufacturing processes to ensure a consistent and economic supply chain solution.
+
+                </li>
+
+                <li>
+
+                  <i class="ri-check-double-line"></i> As a quality driven supplier, Supreme CNC strives to excel in its pursuit for customer satisfaction and therefore operates a 100% inspection process for all manufacturing processes
+
+                </li>
+
+                <li>
+
+                  <i class="ri-check-double-line"></i> Coupled with the latest cad cam software and program storage solutions, Piece of mind is guaranteed with a delivery from Supreme CNC.
+
+                </li>
+
+                <li>
+
+                  <i class="ri-check-double-line"></i>  Supreme has now expanded its machining side of the business (Supreme CNC), which has not only attracted some high profile OEM companies but also a new highly skilled work force. 
+
+                </li>
+
+              </ul>
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+     
+
+      <!-- End About Section -->
+
+
+
+
+
+    
+
+
+
+      <!-- ======= Portfolio Section ======= -->
+
+      <section id="portfolio" class="portfolio">
+
+        <div class="container" data-aos="fade-up">
+
+          <div class="section-title">
+
+            <h2>Portfolio</h2>
+
+            <p>CNC Gallery</p>
+
+          </div>
+
+          <div     
+
+            class="row portfolio-container"
+
+            data-aos="fade-up"
+
+            data-aos-delay="200"
+
+          >
+
+            
+            {% for cncgal in gallery %}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-fas">
+
+              <div class="portfolio-wrap">
+
+                <img
+
+                  src="{{ cncgal.image.url }}"
+
+                  class="img-fluid"
+
+                  alt=""
+
+                />
+
+                <div class="portfolio-info">
+
+                  <h4>{{ cncgal.description }}</h4>
+
+                  <p>CNC</p>
+
+                  <div class="portfolio-links">
+
+                    <a
+
+                      href="{{ cncgal.image.url }}"
+
+                      data-gallery="portfolioGallery"
+
+                      class="portfolio-lightbox"
+
+                      title="{{ cncgal.description }}"
+
+                      ><i class="bx bx-fullscreen"></i
+
+                    ></a>
+
+                    
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+            {% endfor %}
+
+            
+
+            
+
+            
+
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <section id="capacity" class="about">
+
+        <div class="container" data-aos="fade-up">
+
+          <div class="row">
+
+            <div class="section-title">
+
+                <h2>Our CNC Capabilities</h2>
+
+              </div>
+
+            
+
+            
+
+            <div
+
+              class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content"
+
+              data-aos="fade-right"
+
+              data-aos-delay="100"
+
+            >
+
+              <h3>
+
+                Our CNC Turning Capacity
+
+              </h3>
+
+              <table style="width:100%">
+
+               
+
+                <tr>
+
+                  <th class="top-left">Machine</th>
+
+                  <th >Machine Type</th>
+
+                  <th class="top-right">Capacity</th>
+
+                </tr>
+
+                <tr>
+
+                  <td>Hardinge 8/52</td>
+
+                  <td>CNC Lathe</td>
+
+                  <td>up to 300mm DIA</td>
+
+                </tr>
+
+                <tr>
+
+                  <td>Hardinge 6/45</td>
+
+                  <td>CNC Lathe</td>
+
+                  <td>Up to 250mm DIA</td>
+
+                </tr>
+
+                <tr>
+
+                  <td>CUTEX 160A</td>
+
+                  <td>CNC Lathe</td>
+
+                  <td>Up to 250mm DIA</td>
+
+                </tr>
+
+                <tr>
+
+                  <td>CUTEX 160A</td>
+
+                  <td>CNC Lathe</td>
+
+                  <td>Up to 250mm DIA</td>
+
+                </tr>
+
+                
+
+                <tr>
+
+                  <td>Hwacheon Hi-Tech 200B</td>
+
+                  <td>CNC Lathe with live tools</td>
+
+                  <td>Up to 300mm DIA</td>
+
+                </tr>
+
+                <tr>
+
+                  <td>Hardinge Conquest</td>
+
+                  <td>CNC Lathe with barfeeder</td>
+
+                  <td>3mm to 35mm collet</td>
+
+                </tr>
+
+                <tr>
+
+                  <td class="bottom-left">MEGITT</td>
+
+                  <td>CNC Lathe</td>
+
+                  <td class="bottom-right">Up to 200mm DIA</td>
+
+                </tr>
+
+                
+
+              </table>
+
+
+
+            </div>
+
+            <div
+
+              class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content"
+
+              data-aos="fade-right"
+
+              data-aos-delay="100"
+
+            >
+
+              <h3>
+
+                Our CNC Milling Capacity
+
+              </h3>
+
+              <table style="width:100%">
+
+                <tr>
+
+                  <th class="top-left">Machine</th>
+
+                  <th >Machine Type</th>
+
+                  <th class="top-right">Capacity</th>
+
+                </tr>
+
+                
+
+                <tr>
+
+                  <td>Cincinnatti Arrow 500</td>
+
+                  <td>CNC Milling Centre</td>
+
+                  <td>500 x 500 x 500 mm </td>
+
+                </tr>
+
+                <tr>
+
+                  <td>Cincinnatti Arrow 1000</td>
+
+                  <td>CNC Milling Centre</td>
+
+                  <td>1020 x 510 x 560 mm</td>
+
+                </tr>
+
+                <tr>
+
+                  <td>Dugard Eagle 660</td>
+
+                  <td>CNC Milling Centre</td>
+
+                  <td>660 x 520 x 510 mm</td>
+
+                </tr>
+
+                <tr>
+
+                  <td class="bottom-left">HAAS TM-1</td>
+
+                  <td>CNC Mill</td>
+
+                  <td class="bottom-right">762 x 305 x 406 mm</td>
+
+                </tr>
+
+                
+
+              </table>
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+        
+
+      </section>
+{% endblock content %}
+
+

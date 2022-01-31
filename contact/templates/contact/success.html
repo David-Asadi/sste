@@ -1,0 +1,27 @@
+{% extends 'products-page-template.html' %}
+{% load static %}
+{% block content %}
+
+<main id="main">
+
+
+    <!-- ======= Contact Section ======= -->
+
+    <section id="contact" class="contact">
+
+        <div class="container" data-aos="fade-up">
+            <div class="success">
+                <p class="message-sent">Thank You! Your message was received!</p>
+                <meta http-equiv="refresh" content="3;url={% url 'home-page' %}">
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- End Contact Section -->
+
+</main>
+
+{% endblock content %}

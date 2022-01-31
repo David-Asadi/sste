@@ -1,0 +1,156 @@
+{% extends 'products-page-template.html' %}
+{% load static %}
+{% block content %}
+
+<main id="main">
+
+
+    <!-- ======= Contact Section ======= -->
+
+    <section id="contact" class="contact">
+
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title section-title-contact">
+
+                <h2>Contact</h2>
+
+                <p>Contact Us</p>
+
+            </div>
+
+
+
+            <div>
+
+                <iframe style="border: 0; width: 100%; height: 270px"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9646.192506195906!2d-1.6358896!3d52.8124839!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd34282763ba9ef93!2sSupreme%20Surface%20Treatment%20Engineering%20Ltd!5e0!3m2!1sen!2suk!4v1624782973302!5m2!1sen!2suk"></iframe>
+
+            </div>
+
+
+
+            <div class="row mt-5">
+
+                <div class="col-lg-4">
+
+                    <div class="info">
+
+                        <div class="address">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                            <h4>Location:</h4>
+
+                            <p>Little Burton West, Burton on Trent, DE14 1PP</p>
+
+                        </div>
+
+
+
+                        <div class="email">
+
+                            <i class="bi bi-envelope"></i>
+
+                            <h4>Email:</h4>
+
+                            <p><a
+                                    href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#97;&#108;&#101;&#115;&#64;&#115;&#117;&#112;&#114;&#101;&#109;&#101;&#45;&#101;&#110;&#103;&#46;&#99;&#111;&#109;">&#115;&#97;&#108;&#101;&#115;&#64;&#115;&#117;&#112;&#114;&#101;&#109;&#101;&#45;&#101;&#110;&#103;&#46;&#99;&#111;&#109;</a>
+                            </p>
+
+                        </div>
+
+
+
+
+
+                        <div class="phone">
+
+                            <i class="bi bi-phone"></i>
+
+                            <h4>Call:</h4>
+
+                            <p>+44 1283 529314</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-lg-8 mt-5 mt-lg-0">
+                
+
+                    <form method="POST"  class="php-email-form">
+
+                        {% csrf_token %}
+
+                        <div class="row">
+
+                            <div class="col-md-6 form-group">
+
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                    required />
+
+                            </div>
+
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Your Email" required />
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-group mt-3">
+
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                                required />
+
+                        </div>
+
+                        <div class="form-group mt-3">
+
+                            <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                                required></textarea>
+
+                        </div>
+
+                        <div class="my-3">
+
+                            <div class="loading">Loading</div>
+
+                            <div class="error-message"></div>
+
+                            <div class="sent-message">
+
+                                Your message has been sent. Thank you!
+
+                            </div>
+
+                        </div>
+
+                        <div class="text-center">
+
+                            <button type="submit">Send Message</button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- End Contact Section -->
+
+</main>
+
+{% endblock content %}

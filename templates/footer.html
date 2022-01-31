@@ -1,0 +1,209 @@
+<footer id="footer">
+
+  <div class="footer-top">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6">
+
+          <div class="footer-info">
+
+            <h3>SSTE<span>.</span></h3>
+
+            <p>Supreme Surface Treatment Engineering ltd</p>
+
+            <p>
+
+              Little Burton West <br />
+
+              Burton on Trent, DE14 1PP<br /><br />
+
+              <strong>Phone:</strong> +44 1283 529314<br />
+
+              <strong>Email:</strong>
+
+              <a
+                href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#97;&#108;&#101;&#115;&#64;&#115;&#117;&#112;&#114;&#101;&#109;&#101;&#45;&#101;&#110;&#103;&#46;&#99;&#111;&#109;">&#115;&#97;&#108;&#101;&#115;&#64;&#115;&#117;&#112;&#114;&#101;&#109;&#101;&#45;&#101;&#110;&#103;&#46;&#99;&#111;&#109;</a>
+
+            </p>
+
+            <div class="social-links mt-3">
+
+
+              {% for smedia in smedia %}
+      
+              <a href="{{ smedia.link }}" title="{{ smedia.media_type }}" class="{{ smedia.media_type }}"><i class="bx bxl-{{ smedia.media_type }}"></i></a>
+        
+              {% endfor %}
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="col-lg-2 col-md-6 footer-links">
+
+          <h4>Useful Links</h4>
+
+          <ul>
+
+            <li>
+
+              <i class="bx bx-chevron-right"></i> <a href="{% url 'home-page' %}">Home</a>
+
+            </li>
+
+            <li>
+
+              <i class="bx bx-chevron-right"></i> <a href="{% url 'home-page' %}#about">About us</a>
+
+            </li>
+
+            <li>
+
+              <i class="bx bx-chevron-right"></i> <a href="{% url 'home-page' %}#hero">Services</a>
+
+            </li>
+
+            <li>
+
+              <i class="bx bx-chevron-right"></i>
+
+              <a href="{% url 'home-page' %}#portfolio">Products</a>
+
+            </li>
+
+            <li>
+
+              <i class="bx bx-chevron-right"></i>
+
+              <a href="{% url 'home-page' %}#team">Team</a>
+
+            </li>
+
+            <li>
+
+              <i class="bx bx-chevron-right"></i>
+
+              <a href="{% url 'contactus' %}">Contact</a>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-6 footer-links">
+
+          <h4>Our Services</h4>
+
+          <ul>
+
+            <li>
+
+              <i class="bx bx-chevron-right"></i> <a href="{% url 'supreme-cnc' %}">CNC Machining</a>
+
+            </li>
+
+            <li>
+
+              <i class="bx bx-chevron-right"></i>
+
+              <a href="{% url 'supreme-fab' %}">Metal Fabrication</a>
+
+            </li>
+
+            <li>
+
+              <i class="bx bx-chevron-right"></i>
+
+              <a href="{% url 'supreme-plast' %}">Plastic Fabrication</a>
+
+            </li>
+
+
+
+          </ul>
+
+        </div>
+
+
+
+        <div class="col-lg-4 col-md-6 footer-links">
+
+          <h4>Our Products</h4>
+
+          <ul>
+
+            <li>
+
+              <i class="bx bx-chevron-right"></i> <a href="{% url 'cnc-products' %}">CNC Products</a>
+
+            </li>
+
+            <li>
+
+              <i class="bx bx-chevron-right"></i>
+
+              <a href="{% url 'fabrication-products' %}">Metal Fabrication Products</a>
+
+            </li>
+
+            <li>
+
+              <i class="bx bx-chevron-right"></i>
+
+              <a href="{% url 'plastic-products' %}">Plastic Fabrication Products</a>
+
+            </li>
+
+
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="container">
+
+      <div class="copyright">
+
+        &copy; Copyright
+
+        <strong><span> Supreme Surface Treatment Engineering Limited </span></strong>. All Rights Reserved
+
+      </div>
+
+      <div class="credits"></div>
+
+    </div>
+
+    <div class="cookie-container">
+
+      <p> We use cookies in this website to give you the best experience on our
+
+        site and show you relevant ads. To find out more, read our
+
+        <a href="cookie-policy.html" target="_blank">privacy policy</a> and <a href="cookie-policy.html"
+          target="_blank">cookie policy</a>.
+      </p>
+
+      <button class="cookie-btn">Close</button>
+
+    </div>
+
+</footer>
+
+<!-- End Footer -->

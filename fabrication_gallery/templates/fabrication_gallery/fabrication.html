@@ -1,0 +1,254 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<!-- ======= Hero Section ======= -->
+
+<section id="fab-hero" class="d-flex align-items-center justify-content-center">
+
+  <div class="container" data-aos="fade-up">
+
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+
+      <div class="col-xl-6 col-lg-8">
+
+        <h1>SUPREME FABRICATION<span>.</span></h1>
+        <h2>Our experienced Fabrication Team is here to help you achieve your vision</h2>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+
+      <div class="col-xl-2 col-md-4">
+
+        <div class="icon-box">
+
+
+
+          <h3><a href="#about">About Supreme Fabrication</a></h3>
+
+        </div>
+
+      </div>
+
+      <div class="col-xl-2 col-md-4">
+
+        <div class="icon-box">
+
+
+
+          <h3><a href="#portfolio">Gallery</a></h3>
+
+        </div>
+
+      </div>
+
+      <div class="col-xl-2 col-md-4">
+
+        <div class="icon-box">
+
+
+
+          <h3><a href="{% url 'fabrication-products' %}">Products</a></h3>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- End Hero -->
+
+
+
+<main id="main">
+
+  <!-- ======= About Section ======= -->
+
+  <section id="about" class="about">
+
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+
+          <img src='{% static "assets/img/fabr.png" %}' class="img-fluid" alt="" />
+
+        </div>
+
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+
+          <h3>
+
+            Welcome to Supreme Metal Fabrication
+
+          </h3>
+
+          <p class="fst-italic">
+
+            Supreme Surface Treatment Engineering are one of the leading suppliers to the Metal Finishing industry.
+
+
+
+          </p>
+
+          <ul>
+
+            <li>
+
+              <i class="ri-check-double-line"></i> We supply bespoke jigging and racking solutions to Anodizers,
+              Electroplaters, Metal treatment specialists and Powder-Coaters.
+
+            </li>
+
+            <li>
+
+              <i class="ri-check-double-line"></i> Our business has been built on the manufacturing of a range of
+              specialist jigs to both industry standard and bespoke specifications.
+
+            </li>
+
+            <li>
+
+              <i class="ri-check-double-line"></i> In accordance with our commitment to client support and satisfaction
+              we also provide a reconditioning service which is not only cost effective but is also coordinated with our
+              clients, minimizing interruption to their business’s production rate.
+
+            </li>
+
+            <li>
+
+              <i class="ri-check-double-line"></i> We strive to refine our production techniques continuously. The key
+              to being competitive and successful is being as efficient as possible without compromising our high
+              standards.
+
+
+
+            </li>
+
+            <li>
+
+              <i class="ri-check-double-line"></i> We work with you at all levels - Design, Manufacture, Production and
+              After Sales Support.
+
+            </li>
+
+          </ul>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- End About Section -->
+
+
+
+
+
+
+
+
+
+  <!-- ======= Portfolio Section ======= -->
+
+  <section id="portfolio" class="portfolio">
+
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+
+        <h2>Portfolio</h2>
+
+        <p>Fabrication Gallery</p>
+
+      </div>
+
+
+
+      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+        {% for fabgal in gallery %}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-fas">
+
+              <div class="portfolio-wrap">
+
+                <img
+
+                  src="{{ fabgal.image.url }}"
+
+                  class="img-fluid"
+
+                  alt=""
+
+                />
+
+                <div class="portfolio-info">
+
+                  <h4>{{ fabgal.description }}</h4>
+
+                  <p>FABRICATION</p>
+
+                  <div class="portfolio-links">
+
+                    <a
+
+                      href="{{ fabgal.image.url }}"
+
+                      data-gallery="portfolioGallery"
+
+                      class="portfolio-lightbox"
+
+                      title="{{ fabgal.description }}"
+
+                      ><i class="bx bx-fullscreen"></i
+
+                    ></a>
+
+                    
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+            {% endfor %}
+
+        
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- End Portfolio Section -->
+  {% endblock content %}

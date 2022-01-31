@@ -1,0 +1,153 @@
+{% extends 'products-page-template.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!-- ======= Hero Section ======= -->
+
+
+
+<!-- End Hero -->
+
+
+
+<main id="main">
+
+
+
+
+
+
+
+
+
+  <main id="main">
+
+
+
+
+
+
+
+
+
+    <!-- ======= Portfolio Section ======= -->
+
+    <section id="portfolio" class="portfolio">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+
+          <!-- <h2>Portfolio</h2> -->
+          <hr>
+          <p>CNC Products</p>
+          <hr>
+
+        </div>
+
+
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-12 d-flex justify-content-center">
+
+            <ul id="portfolio-flters">
+
+              <li data-filter="*" class="filter-active">All</li>
+
+
+              {% for cat in subcat %}
+
+              <li data-filter=".filter-{{ cat.name|slugify }}">{{ cat.name }}</li>
+
+              {% endfor %}
+
+
+
+
+            </ul>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          {% for cncpro in cproducts %}
+
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-{{ cncpro.sub_category|slugify }} ">
+
+            <div class="portfolio-wrap">
+
+              <img src="{{ cncpro.thumbnail_image.url }}" class="img-fluid" alt="" />
+
+              <div class="portfolio-info">
+
+
+
+                <h4>{{ cncpro.title }}</h4>
+
+
+
+                <p>{{ cncpro.used_for }}</p>
+
+                <div class="portfolio-links">
+
+                  <a href="{{ cncpro.thumbnail_image.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                    title="{{cncpro.title}}"><i class="bx bx-fullscreen"></i></a>
+
+                  <a href="{% url 'cnc-product-detail' cncpro.id %}" title="More Details"><i
+                      class="bx bx-info-circle"></i></a>
+                      
+                      
+                </div>
+                
+              </div>
+             
+            </div>
+
+          </div>
+          
+          {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- End Portfolio Section -->
+
+
+
+
+
+    {% endblock content %}

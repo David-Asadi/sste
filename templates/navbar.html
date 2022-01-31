@@ -1,0 +1,143 @@
+<!-- ======= Header ======= -->
+
+{% load static %}
+{% block content %}
+<header id="header" class="fixed-top ">
+
+  <div class="container d-flex align-items-center justify-content-lg-between">
+
+
+    {% for logo in logo %}
+    {% if logo.logo %}
+    <a href="{% url 'home-page' %}" class="logo me-auto me-lg-0"><img src= "{{ logo.logo.url }}" alt="" class="img-fluid" /></a>
+    {% else %}
+    <p></p>
+    {% endif %}
+
+    {% endfor %}
+
+
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+
+      <ul>
+
+        <li><a class="nav-link scrollto" href="{% url 'home-page' %}#hero">Home</a></li>
+
+        <li><a class="nav-link scrollto" href="{% url 'home-page' %}#about">About</a></li>
+
+        <li class="dropdown">
+
+          <a class="nav-link scrollto" href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+
+          <ul>
+
+            <li><a href="{% url 'supreme-cnc' %}">CNC Machining</a></li>
+
+            <li><a href="{% url 'supreme-fab' %}">Metal Fabrication</a></li>
+
+            <li><a href="{% url 'supreme-plast' %}">Plastic Fabrication</a></li>
+
+
+
+          </ul>
+
+        </li>
+
+
+
+
+
+        <li class="dropdown">
+
+          <a class="nav-link scrollto" href="#portfolio"><span>Products</span> <i class="bi bi-chevron-down"></i></a>
+
+          <ul>
+
+            <li class="dropdown">
+
+              <a href="{% url 'fabrication-products' %}"><span>Fabrication Products</span>
+                <i class="bi bi-chevron-right"></i></a>
+
+                <ul>
+                  {% for fpro in fablist %}
+                  <li><a href="{% url 'fab-product-detail' fpro.id %}">{{ fpro.title }}</a></li>
+                  {% endfor %}
+
+
+                </ul>
+
+
+            </li>
+
+
+
+
+
+            <li class="dropdown"><a href="{% url 'cnc-products' %}"><span>CNC Products</span>
+
+                <i class="bi bi-chevron-right"></i></a>
+
+                <ul>
+                  {% for cncpro in cnclist %}
+                  <li><a href="{% url 'cnc-product-detail' cncpro.id %}">{{ cncpro.title }}</a></li>
+                  {% endfor %}
+
+
+                </ul>
+
+            </li>
+
+            <li class="dropdown"><a href="{% url 'plastic-products' %}"><span>Plastic Products</span>
+
+                <i class="bi bi-chevron-right"></i></a>
+
+                <ul>
+                  {% for plastpro in plastlist %}
+                  <li><a href="{% url 'plastic-product-detail' plastpro.id %}">{{ plastpro.title }}</a></li>
+                  {% endfor %}
+
+
+                </ul>
+
+            </li>
+
+
+
+          </ul>
+
+        </li>
+
+        <li><a class="nav-link scrollto" href="{% url 'home-page' %}#team">Team</a></li>
+
+        <li><a class="nav-link scrollto" href="{% url 'contactus' %}">Contact</a></li>
+
+      </ul>
+
+      <i class="bi bi-list mobile-nav-toggle"></i>
+
+    </nav>
+
+    <!-- .navbar -->
+
+
+
+    <div class="social-bar">
+
+      {% for smedia in smedia %}
+      
+      <a href="{{ smedia.link }}" title="{{ smedia.media_type }}" class="{{ smedia.media_type }}"><i class="bx bxl-{{ smedia.media_type }}"></i></a>
+
+      {% endfor %}
+      
+      
+      
+      
+      
+
+    </div>
+
+</header>
+{% endblock content %}
+
+<!-- End Header -->

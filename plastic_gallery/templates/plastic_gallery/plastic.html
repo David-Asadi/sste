@@ -1,0 +1,295 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<!-- ======= Hero Section ======= -->
+
+<section id="plast-hero" class="d-flex align-items-center justify-content-center">
+
+  <div class="container" data-aos="fade-up">
+
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+
+      <div class="col-xl-6 col-lg-8">
+
+        <h1>SUPREME PLASTICS<span>.</span></h1>
+        <h2>Welcome to Supreme Plastic manufacturing and Fabrication</h2>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+
+      <div class="col-xl-2 col-md-4">
+
+        <div class="icon-box">
+
+
+
+          <h3><a href="#about">About Supreme Plastic</a></h3>
+
+        </div>
+
+      </div>
+
+      <div class="col-xl-2 col-md-4">
+
+        <div class="icon-box">
+
+
+
+          <h3><a href="#portfolio">Gallery</a></h3>
+
+        </div>
+
+      </div>
+     
+      <div class="col-xl-2 col-md-4">
+
+        <div class="icon-box">
+
+
+
+          <h3><a href="{% url 'plastic-products' %}">Plastic Products</a></h3>
+
+        </div>
+
+      </div>
+
+      <!-- <div class="col-xl-2 col-md-4">
+
+            <div class="icon-box">
+
+              
+
+              <h3><a href="#portfolio">Products</a></h3>
+
+            </div>
+
+          </div> -->
+
+
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- End Hero -->
+
+
+
+<main id="main">
+
+  <!-- ======= About Section ======= -->
+
+  <section id="about" class="about">
+
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+
+          <img src='{% static "assets/img/products/barrel_assy.jpg" %}' class="img-fluid" alt="" />
+
+        </div>
+
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+
+          <h3>
+
+            Welcome to Supreme Plastic Fabrication
+
+          </h3>
+
+
+
+          <ul>
+
+            <li>
+
+              <i class="ri-check-double-line"></i> Our plastic fabrication section can offer a variety of products,
+              materials and services.
+
+            </li>
+
+            <li>
+
+              <i class="ri-check-double-line"></i> And being TWI Certified, you can be assured of the quality in your
+              products.
+
+            </li>
+
+            <li>
+
+              <i class="ri-check-double-line"></i> With the support of our Metal Fabrications and CNC Machining
+              operations we are able to offer small one-off parts to complete assemblies and plating solutions.
+
+            </li>
+
+            <li>
+
+              <i class="ri-check-double-line"></i> Being a finishing industry leading supplier - our expertise in this
+              fiield is reflected in our services, solutions and our range of sophisticated yet simple and easy to use
+              products.
+
+            </li>
+
+            <li>
+
+              <i class="ri-check-double-line"></i> Using our plastic CNC Router together with latest CAD/CAM
+              technologies gives us the edge in achieving accurate shapes in a precise manner.
+
+
+
+            </li>
+
+
+
+            <li>
+
+              <i class="ri-check-double-line"></i> With over 15 years experience, no challenge is too small.
+
+
+
+            </li>
+
+            <li>
+
+              <i class="ri-check-double-line"></i> Our work in plastics includes: <ol style="margin-top: 15px;">
+
+                <li style="list-style-type: disc">Plating Barrels</li>
+
+                <li style="list-style-type: disc">Electro Minik all in one solution</li>
+
+                <li style="list-style-type: disc">Tanks, Tank Linings and drip covers</li>
+
+                <li style="list-style-type: disc">Baskets and boxes</li>
+
+                <li style="list-style-type: disc">Standard and custom Plastic Gears</li>
+
+                <li style="list-style-type: disc">Plastic sheet cutting and welding</li>
+
+                <li style="list-style-type: disc">We use Polypropylene, HDPE, Nylon, perforated, sheet and tube</li>
+
+                <li style="list-style-type: disc">And much more ...</li>
+
+
+
+              </ol>
+
+            </li>
+
+          </ul>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- End About Section -->
+
+
+
+
+
+
+
+
+
+  <!-- ======= Portfolio Section ======= -->
+
+  <section id="portfolio" class="portfolio">
+
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+
+        <h2>Portfolio</h2>
+
+        <p>Plastic Gallery</p>
+
+      </div>
+
+
+
+      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+        {% for plastgal in gallery %}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-fas">
+
+              <div class="portfolio-wrap">
+
+                <img
+
+                  src="{{ plastgal.image.url }}"
+
+                  class="img-fluid"
+
+                  alt=""
+
+                />
+
+                <div class="portfolio-info">
+
+                  <h4>{{ plastgal.description }}</h4>
+
+                  <p>FABRICATION</p>
+
+                  <div class="portfolio-links">
+
+                    <a
+
+                      href="{{ plastgal.image.url }}"
+
+                      data-gallery="portfolioGallery"
+
+                      class="portfolio-lightbox"
+
+                      title="{{ plastgal.description }}"
+
+                      ><i class="bx bx-fullscreen"></i
+
+                    ></a>
+
+                    
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+            {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+  {% endblock content %}
